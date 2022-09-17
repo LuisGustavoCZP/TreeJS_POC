@@ -12,8 +12,8 @@ function App()
 	{
 		const {scene, camera, render} = await createScene();
 		const textures = [
-			new THREE.TextureLoader().load('/src/assets/Grass_01_512.png'),
-			new THREE.TextureLoader().load('/src/assets/Dirt_01_512.png'),
+			new THREE.TextureLoader().load('./src/assets/Grass_01_512.png'),
+			new THREE.TextureLoader().load('./src/assets/Dirt_01_512.png'),
 		];
 		const materials = [
 			new THREE.MeshBasicMaterial({map:textures[0]}),
@@ -35,7 +35,7 @@ function App()
 		let clock = new THREE.Clock();
 		const mixers = [];
 
-		const bearModel = await load('/src/assets/character_bear_animated.glb');
+		const bearModel = await load('./src/assets/character_bear_animated.glb');
 
 		const animations = Object.fromEntries(bearModel.animations.filter(anim => !anim.name.includes("_")).map(anim => [anim.name, anim]));
 
